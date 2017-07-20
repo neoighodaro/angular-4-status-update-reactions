@@ -1,0 +1,88 @@
+aside.main {
+    .photo {
+        height: 95px;
+        width: 100%;
+        background-color: #d9d9d9;
+    }
+    .banner-photo {
+        background-image: url(https://pbs.twimg.com/profile_banners/843496574332354560/1497099556/600x200);
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .profile {
+        background-color: #fff;
+        min-height: 50px;
+        .profile-photo {
+            img {
+                max-width: 100%;
+                width: 72px;
+                float: right;
+                left: 25px;
+                position: absolute;
+                border-radius: 100%;
+                top: -26px;
+                border: 2px solid #fff;
+            }
+        }
+        .col-xs-8 {
+            padding-left: 10px;
+        }
+        .name {
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 5px;
+            display: block;
+            line-height: 1.2;
+        }
+        .handle {
+            display: block;
+            margin-bottom: 10px;
+            color: #657786;
+        }
+    }
+    .assets {
+        padding: 10px 0;
+        .assets-count {
+            padding: 0 16px;
+            display: block;
+            font-size: 13px;
+            color: #657786;
+        }
+        .assets-title {
+            font-weight: 600;
+            padding: 0 16px;
+            color: #657786;
+            display: block;
+        }
+        .no-left-pad {
+            padding-left: 0;
+        }
+    }
+    .followers {
+        margin-top: 10px;
+        padding: 10px 16px;
+        background-color: #fff;
+        h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+            font-weight: 600;
+            color: #14171a;
+        }
+        .list-inline {
+            margin-bottom: 0;
+        }
+        .list-inline li {
+            padding: 10px 5px;
+            a {
+                display: block;
+            }
+        }
+        img {
+            border-radius: 100%;
+            max-width: 45px;
+        }
+    }
+}

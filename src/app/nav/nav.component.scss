@@ -1,0 +1,12 @@
+.nav i.fa {
+    font-size: 18px;
+    margin-right: 5px;
+    top: 3px;
+}
+.nav > li.profile-photo > a {
+    padding: 8px 0;
+    img {
+        border-radius: 100%;
+        max-width: 34px;
+    }
+}

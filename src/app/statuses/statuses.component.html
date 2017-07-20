@@ -1,0 +1,69 @@
+<div class="create-status">
+  <form class="clearfix">
+    <div class="form-group">
+      <textarea class="form-control" rows="3" placeholder="Whats happening?" [(ngModel)]="statusText" (ngModelChange)="typingStatus()" name="statusText"></textarea>
+    </div>
+    <div class="pull-right">
+      <span class="countdown">
+        <span *ngIf="statusText">{{this.status.maxLength - statusText.length}}</span>
+        <span *ngIf="!statusText">{{this.status.maxLength}}</span>
+      </span>
+      <button class="btn btn-primary btn-md" [disabled]="canPostStatus != true" (click)="postStatus()">Post</button>
+    </div>
+  </form>
+</div>
+
+<div class="list-statuses clearfix">
+  <ul>
+    <li>
+      <div class="photo">
+        <img src="https://randomuser.me/api/portraits/men/84.jpg" alt="">
+      </div>
+      <div class="status">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus magni iusto placeat culpa, repellat mollitia quae, dolor nam id est,
+          expedita eius perspiciatis quod suscipit. Harum veniam animi suscipit quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquam est aperiam enim, quia odio qui, sit facere totam eius autem? Laudantium commodi eius, ipsam saepe eaque officia ex aperiam
+          veritatis.
+        </p>
+        <div class="reaction">
+          <ul class="list-inline pull-left">
+            <li><a href="#" class="btn btn-sm btn-default" (click)="saveReaction('like')">👍 Like</a></li>
+            <li><a href="#" class="btn btn-sm btn-default" (click)="saveReaction('dislike')">👎 Dislike</a></li>
+            <li><a href="#" class="btn btn-sm btn-default" (click)="saveReaction('love')">❤️ Love</a></li>
+          </ul>
+          <div class="counts pull-right" [hidden]="reactions == undefined || !reactions">
+            <span class="thumbs reaction"><span class="count">3</span> 👍</span>
+            <span class="thumbs reaction"><span class="count">3</span> 👎</span>
+            <span class="heart reaction"><span class="count">4</span> ❤️</span>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="photo">
+        <img src="https://randomuser.me/api/portraits/men/84.jpg" alt="">
+      </div>
+      <div class="status">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus magni iusto placeat culpa, repellat mollitia quae, dolor nam id est,
+          expedita eius perspiciatis quod suscipit. Harum veniam animi suscipit quia. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Aliquam est aperiam enim, quia odio qui, sit facere totam eius autem? Laudantium commodi eius, ipsam saepe eaque officia ex aperiam
+          veritatis.
+        </p>
+        <div class="reaction">
+          <ul class="list-inline pull-left">
+            <li><a href="#" class="btn btn-sm btn-default" (click)="react('like')">👍 Like</a></li>
+            <li><a href="#" class="btn btn-sm btn-default" (click)="react('dislike')">👎 Dislike</a></li>
+            <li><a href="#" class="btn btn-sm btn-default" (click)="react('love')">❤️ Love</a></li>
+          </ul>
+          <div class="counts pull-right" [hidden]="reactions == undefined || !reactions">
+            <span class="thumbs reaction"><span class="count">3</span> 👍</span>
+            <span class="thumbs reaction"><span class="count">3</span> 👎</span>
+            <span class="heart reaction"><span class="count">4</span> ❤️</span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
