@@ -1,4 +1,4 @@
-# How to build status update reactions using Angular 4 and Firebase [Awaiting Review]
+# How to build status update reactions using Angular 4 and Firebase
 Nowadays, most applications have a commenting system of sorts. Whether its commenting about a status update or a story or even a live feed. With status updates also come the like feature which was made popular by companies like Facebook. In this tutorial, we will add reactions to a comment just like Facebook allows you do on status updates.
 
 **What we will be building**
