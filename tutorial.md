@@ -8,7 +8,7 @@ We will be building a simple application where you can publish a status and afte
 The application will be powered by [Angular 4](http://angular.io) in the frontend and [Firebase](http://firebase.google.com) in the backend. It will look something like this after we are done.
 
 
-![](https://dl.dropbox.com/s/vv8d4z951muu7gj/create-status-update-reactions-angular4-4.gif]
+![](https://dl.dropbox.com/s/vv8d4z951muu7gj/create-status-update-reactions-angular4-4.gif)
 
 
 **Requirements for building our status update reactions app**
@@ -279,7 +279,7 @@ Now, open the `sidebar.component.scss` file and add the accompanying style for t
 Now go to the `app.component.html` file and uncomment the `app-statuses` tag. This should make the sidebar instantly visible on the browser. So far you should have something similar to the screenshot below:
 
 
-![](https://dl.dropbox.com/s/4058sf6f9rodp3x/create-status-update-reactions-angular4-1.png]
+![](https://dl.dropbox.com/s/4058sf6f9rodp3x/create-status-update-reactions-angular4-1.png)
 
 
 Now lets create the statuses component and the statuses service. The statuses service will be the place where all the calls to Firebase will happen from. It will be the proxy between our application and Firebase. It is important to use services for such interfacing because it becomes reusable as opposed to using Firebase directly.
@@ -320,7 +320,7 @@ Then go to the imports section of the same file and add this to the imports:
 Next, go to Firebase and [create a new application](https://console.firebase.google.com/u/0/).
 
 
-![](https://dl.dropbox.com/s/0q7w3p53kyi9ioi/create-status-update-reactions-angular4-2.png]
+![](https://dl.dropbox.com/s/0q7w3p53kyi9ioi/create-status-update-reactions-angular4-2.png)
 
 
 When the application is done, click on “Add Firebase to your web app” and then use the credentials to replace the empty `firebaseConfig`  constant in your `app.module.ts` file.
@@ -598,7 +598,7 @@ The last thing we will do with the statuses component is update the scss file. P
 Alright great! Now go to the `app.component.html` file and uncomment the `app-statuses` tag to show your changes. If all goes well then you should see something like this:
 
 
-![](https://dl.dropbox.com/s/tr2jzn3cmiqg78g/create-status-update-reactions-angular4-3.png]
+![](https://dl.dropbox.com/s/tr2jzn3cmiqg78g/create-status-update-reactions-angular4-3.png)
 
 
 **Conclusion**
