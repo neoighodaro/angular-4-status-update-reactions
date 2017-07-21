@@ -84,6 +84,9 @@
             font-weight: 600;
             color: #140044;
             margin-left: 5px;
+            &[hidden] {
+                display: none;
+            }
         }
     }
 }

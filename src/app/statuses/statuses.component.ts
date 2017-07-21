@@ -8,11 +8,13 @@ import { StatusesService } from './statuses.service';
 })
 export class StatusesComponent implements OnInit {
   public statusText: string
+  public statuses: any[]
   public canPostStatus: boolean = false
 
   constructor(public status: StatusesService) { }
 
   ngOnInit() {
+    this.status.recent(50)
   }
 
   typingStatus() {
@@ -23,7 +25,7 @@ export class StatusesComponent implements OnInit {
     this.status.valid(this.statusText) && this.status.post(this.statusText)
   }
 
-  react(reaction: string, id: string) {
-    this.status.react(reaction, id)
+  react(reaction: string, status) {
+    this.status.react(reaction, status)
   }
 }
