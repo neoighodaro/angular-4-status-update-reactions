@@ -37,8 +37,8 @@
         }
     }
 }
-
 .list-statuses {
+    background-color: #fff;
     ul {
         list-style: none;
         padding: 0;
@@ -51,7 +51,6 @@
         }
     }
     .photo {
-        // margin:0 2%;
         float:left;
         height:40px;
         width:40px;
