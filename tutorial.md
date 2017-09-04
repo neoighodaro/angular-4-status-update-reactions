@@ -1,12 +1,11 @@
-# How to build status update reactions using Angular 4 and Firebase
-Nowadays, most applications have a commenting system of sorts, whether it’s commenting about a status update or a story or even a live feed. With status updates also comes the ‘like’ feature which was made popular by companies like Facebook. In this tutorial, we will add reactions to a comment just like Facebook allows you do on status updates.
+Nowadays, most applications have a commenting system of sorts, whether it’s commenting on a status update or a story or even a live feed. With status updates also comes the ‘like’ feature which was made popular by companies like Facebook. In this tutorial, we will add reactions to a comment just like Facebook allows you do on status updates. 
 
 
 ## What we will be building
 
 We will be building a simple application where you can publish a status and after publishing a status, you can add reactions to it. You can **like**, **dislike** and **love** any status on the application.
 
-The application will be powered by [Angular 4](http://angular.io) in the frontend and [Firebase](http://firebase.google.com) in the backend. In following articles, I will demonstrate how to add other real-time features to the app using a tool like [Pusher](https://pusher.com), but for this one we will be focusing on the update and reactions part. It will look something like this after we are done.
+The application will be powered by [Angular 4](http://angular.io) in the front-end and [Firebase](http://firebase.google.com) in the backend. In following articles, I will demonstrate how to add other real-time features to the app using a tool like [Pusher](https://pusher.com), but for this one, we will be focusing on the update and reactions part. It will look something like this after we are done.
 
 ![How to build status update reactions using Angular 4 and Firebase](https://cdn.scotch.io/3646/ZuYAM0cCT6BpiDA8W9zf_create-status-update-reactions-angular4-4.gif)
 
@@ -14,7 +13,7 @@ The application will be powered by [Angular 4](http://angular.io) in the fronten
 
 ### Requirements for building our status update reactions app
 
-To successfully follow along in this tutorial, you need to have a few things in place. Here are a list of those things:
+To successfully follow along in this tutorial, you need to have a few things in place. Here is a list of those things:
 
 
 - [NodeJS & NPM installed](https://docs.npmjs.com/getting-started/installing-node) on your local machine.
@@ -27,7 +26,7 @@ Let us get started with building the application. To start we will need to creat
 
 ## Creating our new Angular application
 
-To create our new application, we can use the Angular CLI and just runn the command below in the directory we want to create our project in:
+To create our new application, we can use the Angular CLI and just run the command below in the directory we want to create our project in:
 
 ```shell
 $ ng new reactions --style scss --skipTests
@@ -65,7 +64,7 @@ Now we are ready to start building our application. To serve our application, ru
 ng serve --open
 ```
 
-Once it is done building, it will automatically open the application on your default browser. If you did everything correctly, you should see the default Angular page on your screen. Perfect.
+Once the build is complete, it will automatically open the application on your default browser. If you did everything correctly, you should see the default Angular page on your screen. Perfect.
 
 -----
 
@@ -74,7 +73,7 @@ Once it is done building, it will automatically open the application on your def
 -----
 
 ## Creating Angular components for our page
-Next, let's create some components to make up the page. We will create a navigation component where we will add our navigation items. It is unimportant to the tutorial and it is just going to be there for aesthetic reasons. Generate the component using the `ng g component` command as seen below:
+Next, let's create some components to make up the page. We will create a navigation component where we will add our navigation items. It is unimportant to the tutorial and it is just going to be there for aesthetic reasons. Generate the component using the `ng g component` command as seen below: 
 
 ### Creating the Angular navigation component
 
@@ -161,7 +160,7 @@ Finally, to see our navigation bar, we will need to clear the contents of our `a
 
 > *We commented out the `app-sidebar` and `app-statuses` component selectors because they do not exist yet. We will create them later in the article and uncomment the component selectors to show them.*
 
-If you are still running the `ng serve` command, refresh the page ans you should see your changes on the browser.
+If you are still running the `ng serve` command, refresh the page and you should see your changes on the browser.
 
 ---
 
@@ -360,8 +359,8 @@ Scroll down to the imports section of the same file and add the `AngularFireModu
   // ...
   imports: [
     // ...
-
-    // Import as an NgModule...
+	
+    // Import as an NgModule... 
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ]
@@ -369,16 +368,16 @@ Scroll down to the imports section of the same file and add the `AngularFireModu
 })
 ```
 
-Next, go to Firebase and [create a new application](https://console.firebase.google.com/u/0/).
+Next, go to the Firebase website and [create a new Firebase application](https://console.firebase.google.com/u/0/). 
 
 ![Create a new Firebase application for our status updates reaction Angular 4 app](https://cdn.scotch.io/3646/hYahvBCTr6j4hmQDq8qL_create-status-update-reactions-angular4-2.png)
 
 
-When the application is done, click on “Add Firebase to your web app” and then use the credentials to replace the empty `firebaseConfig`  constant in your `app.module.ts` file.
+When the application has been created, navigate to “Add Firebase to your web app” and then use the credentials to replace the empty `firebaseConfig`  constant in your `app.module.ts` file.
 
 ![Copy the firebase credentials from the console](https://cdn.scotch.io/3646/g0HW6NLNQSG9uxfLXF0T_Firebase%20screenshot%20of%20the%20credentials.png)
 
-One last thing, in your Firebase application dashboard, click on “Database” and then click on “Rules”, in the field, paste the following:
+One last thing, in your Firebase application dashboard, navigate to “Database” and then click on “Rules”, in the field, paste the following:
 
 ```json
 {
@@ -394,7 +393,7 @@ One last thing, in your Firebase application dashboard, click on “Database” 
 
 ![Firebase database rules](https://cdn.scotch.io/3646/oGt641YQtiKrzQm2BvZT_Firebase%20database%20rules.png)
 
-> IMPORTANT: This will turn off authentication for your Firebase and should only be used for the purposes of this application ALONE. This is NOT recommended for a production application!
+> IMPORTANT: This will turn off authentication for your Firebase and should only be used for the purposes of this application ALONE. This is NOT recommended for a production application! 
 
 ## Creating the Status Angular Component & Service
 Now that we have Firebase plugged in, we can create the statuses component and the service.
@@ -404,7 +403,7 @@ $ ng g component statuses --spec=false
 $ ng g service statuses/statuses --spec=false
 ```
 
-The first command basically creates a status component, while the second command creates a `statuses.service.ts` file in the `./app/statuses` directory.
+The first command basically creates a status component, while the second command creates a `statuses.service.ts` file in the `./app/statuses` directory. 
 
 Open the `./app/statuses/status.service.ts` file so we can add the Firebase functionality. Replace the existing code with the code below:
 
@@ -419,17 +418,17 @@ export class StatusesService {
 
   // Flag to see if status update is in progress
   private inProgress: boolean = false
-
+  
   // Possible available reactions
   private reactions: string[] = ['like', 'love', 'dislike']
-
+  
   // All the statuses available
   public statuses: FirebaseListObservable<any[]>
-
+  
   // The maimum length and minimum length of a status
   public maxLength:number = 500
   public minLength:number = 0
-
+  
   // Flag that determines if the status text is valid or nah
   public statusTextValid: boolean = false
 
@@ -439,7 +438,7 @@ export class StatusesService {
   // ----------------------------------------------------------------------
   // Method to post the status to Firebase
   // ----------------------------------------------------------------------
-
+  
   post(status: string) {
     if ( ! this.updating()) {
       this.inProgress = true
@@ -449,11 +448,11 @@ export class StatusesService {
       })
     }
   }
-
+  
   // ----------------------------------------------------------------------
   // Method to send a reaction to a status to Firebase
   // ----------------------------------------------------------------------
-
+  
   react(reaction: string, status) {
     if (~this.reactions.indexOf(reaction)) {
       let reactions: any = {}
@@ -462,36 +461,36 @@ export class StatusesService {
       this.statuses.update(status.$key, reactions)
     }
   }
-
+  
   // ----------------------------------------------------------------------
   // Method to get the recent statuses from Firebase
   // ----------------------------------------------------------------------
-
+  
   recent(amount: number): FirebaseListObservable<any[]> {
     return this.statuses = this.af.list('/statuses').map(arr => arr.reverse()) as FirebaseListObservable<any[]>;
   }
-
+  
   // ----------------------------------------------------------------------
   // Method to check the validity of a status update
   // ----------------------------------------------------------------------
-
+  
   valid(status: string) : boolean {
     return status.length >= this.minLength && status.length <= this.maxLength
   }
-
+  
   // ----------------------------------------------------------------------
   // Method to check the in progress flag
   // ----------------------------------------------------------------------
-
+  
   updating() : boolean {
     return this.inProgress
   }
 }
 ```
 
-Whoa! That is a lot! The first 3 lines simply import node modules that we will be needing for the service to work properly. We define a couple of `private` and `public` properties for the class that will be used both internally and externally in the class.
+Whoa! That is a lot! The first 3 lines simply import node modules that we will be needing for the service to work properly. We define a couple of `private` and `public` properties for the class that will be used both internally and externally in the class. 
 
-In the constructor, we initialize the `af`  property which is for working with Firebase. We also create a `post` method, and in there, we define the logic for posting status updates to Firebase.
+In the constructor, we initialize the `af`  property which is for working with Firebase. We also create a `post` method, and in there, we define the logic for posting status updates to Firebase. 
 
 The `react` method checks if the reaction is valid and if it is, it posts a reaction to the Firebase. The `recent`  method fetches the most recent statuses from Firebase. The `valid` method just checks if the status text is valid and the `updating` checks to see if there is currently a post to Firebase pending completion.
 
@@ -556,7 +555,7 @@ export class StatusesComponent implements OnInit {
   }
 
   // ---------------------------------------------------------
-  // Get the status of the text if its valid or nah
+  // Get the status of the text if it's valid or nah
   // ---------------------------------------------------------
 
   typingStatus() {
@@ -581,12 +580,12 @@ export class StatusesComponent implements OnInit {
 }
 ```
 
-Above, we defined some properties and methods to use in the lifetime of the component. The `ngOnInit` method is called automatically when the component is initialized. In the `constructor` we inject the status service into the component so the methods will be available to this component.
+Above, we defined some properties and methods to use in the lifetime of the component. The `ngOnInit` method is called automatically when the component is initialized. In the `constructor`, we inject the status service into the component so the methods will be available to this component. 
 
-The `typingStatus` method will be called every time someone updates the status text from the frontend. We use this to determine if the post button should be enabled or not. The `postStatus` posts the status to Firebase using the status service, and finally, the `react` method posts to Firebase using the service.
+The `typingStatus` method will be called every time someone updates the status text from the front-end. We use this to determine if the post button should be enabled or not. The `postStatus` posts the status to Firebase using the status service, and finally, the `react` method posts to Firebase using the service.
 
-## Adding our Status Component to the application
-Once we are done with the backend of our Status Component, we will now add the UI to interact with the component.
+## Adding our Status Component to the application 
+Once we are done with the backend of our Status Component, we will now add the UI to interact with the component. 
 
 Open the `statuses.component.html` and add replace the content with the HTML below:
 
@@ -636,13 +635,11 @@ Open the `statuses.component.html` and add replace the content with the HTML bel
 </div>
 ```
 
-This is basically HTML that has some parts where Angular is injected. On line 3, we add a text area and we use the `ngModel` and `ngModelChange` attributes to bind a model and listen for model changes respectively.
+This is basically HTML that has some parts where Angular is injected. On line 3, we add a text area and we use the `ngModel` and `ngModelChange` attributes to bind a model and listen for model changes respectively. 
 
 On line 8 and 9, we just calculate the available amount of characters left as the user types. On line 11, we have the post button that is `disabled`  when the `canPostStatus` variable is false. We also attached a click event callback `postStatus`. Finally, we loop through all the statuses available on Firebase.
 
-The last thing we will do with the statuses component is update the SCSS file.
-
-Paste the following in the `statuses.component.scss` file:
+Finally, we will update the statuses component's SCSS file. Paste the following in the `statuses.component.scss` file:
 
 ```sass
 .create-status {
